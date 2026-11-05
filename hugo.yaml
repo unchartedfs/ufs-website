@@ -1,3 +1,4 @@
+baseURL: "https://unchartedfs.com/"
 languageCode: en-us
 title: "Uncharted Frontier Services"
 theme: uncharted-microsite
@@ -20,6 +21,8 @@ params:
     author: "Uncharted Frontier Services"
     # Used as the page's meta description (shown in search results)
     overview: "Uncharted Frontier Services leads multidisciplinary R&D teams on high-risk, high-reward technology programs for the U.S. government, from problem discovery through last-mile transition."
+    # Read by Hugo's Open Graph and Twitter card templates
+    description: "Uncharted Frontier Services leads multidisciplinary R&D teams on high-risk, high-reward technology programs for the U.S. government, from problem discovery through last-mile transition."
     unchartedTrademarks:
       - "Uncharted®"
     favicon: "/images/favicon.ico"
