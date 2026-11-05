@@ -27,7 +27,7 @@ params:
       - "Uncharted®"
     favicon: "/images/favicon.ico"
     images:
-        - /images/ogimg.png
+        - /images/hero/frontier-hero.jpg
 
 menus:
   main:
