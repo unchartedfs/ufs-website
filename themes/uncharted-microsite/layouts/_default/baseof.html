@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+    {{ block "main" . }}{{ end }}
+    
+    <!-- Cookie Consent Javascript -->
+    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>
+    <script>
+    window.addEventListener('load', function(){
+      document.body.classList.add('theme_uncharted');
+
+      // obtain plugin
+      var cc = initCookieConsent();
+
+      // run plugin with your configuration
+      cc.run({
+        current_lang: 'en',
+        autoclear_cookies: true,                   // default: false
+        page_scripts: true,                        // default: false
+
+        onFirstAction: function(user_preferences, cookie){
+            // callback triggered only once on the first accept/reject action
+            if (cookie.categories.includes('performance')) {
+              gtag_consent("update","granted");
+            } else {
+              gtag_consent("update","denied");
+            }
+        },
+
+        onAccept: function (cookie) {
+            // callback triggered on the first accept/reject action, and after each page load
+            if (cookie.categories.includes('performance')) {
+              gtag_consent("update","granted");
+            } else {
+              gtag_consent("update","denied");
+            }
+        },
+
+        onChange: function (cookie, changed_categories) {
+            // callback triggered when user changes preferences after consent has already been given
+            if (cookie.categories.includes('performance')) {
+              gtag_consent("update","granted");
+            } else {
+              gtag_consent("update","denied");
+            }
+        },
+
+        gui_options: {
+         consent_modal: {
+          layout: 'box',
+          position: 'bottom center'
+         }
+        },
+
+        languages: {
+          'en': {
+            consent_modal: {
+              title: 'Cookie Preferences',
+              description: 'We use essential cookies to help you use our site. We also use performance cookies to understand site usage and make improvements. We don&#39;t sell your data or use it for advertising purposes. <a href="https://terms.uncharted.software/#cookie-policy">Learn more</a>',
+              primary_btn: {
+                  text: 'Accept all',
+                  role: 'accept_all'              // 'accept_selected' or 'accept_all'
+              },
+              secondary_btn: {
+                  text: 'Reject performance cookies',
+                  role: 'accept_necessary'        // 'settings' or 'accept_necessary'
+              }
+            },
+            settings_modal: {
+              title: 'Cookie Preferences',
+              save_settings_btn: 'Save settings',
+              accept_all_btn: 'Accept all',
+              reject_all_btn: 'Reject performance cookies',
+              close_btn_label: 'Close',
+              // cookie_table_caption: 'Cookie list',
+              cookie_table_headers: [
+                {col1: 'Name'},
+                {col2: 'Domain'},
+                {col3: 'Expiration'},
+                {col4: 'Description'}
+              ],
+              blocks: [
+                {
+                  title: '',
+                  description: 'We use essential cookies to help you use our site. We also use performance cookies to understand site usage and make improvements. We don&#39;t sell your data or use it for advertising purposes.<br/><br/>You can opt in/out whenever you want. For more details, see our <a href="https://terms.uncharted.software/#cookie-policy">cookie policy</a>.'
+                }, {
+                  title: 'Essential cookies',
+                  description: 'These cookies are essential for the proper functioning of our website. They allow us to remember your preferences.',
+                  toggle: {
+                    value: 'necessary',
+                    enabled: true,
+                    readonly: true          // cookie categories with readonly=true are all treated as "necessary cookies"
+                  }
+                }, {
+                  title: 'Performance cookies',
+                  description: 'These cookies allow us to collect anonymized web analytics that help us learn how well our site performs.',
+                  toggle: {
+                    value: 'performance',     // your cookie category
+                    enabled: false,
+                    readonly: false
+                  },
+                  cookie_table: [             // list of all expected cookies
+                    {
+                      col1: '^_ga',       // match all cookies starting with "_ga"
+                      col2: 'google.com',
+                      col3: '14 months',
+                      col4: 'Google Analytics',
+                      is_regex: true
+                    }
+                  ]
+                }, {
+                    title: 'More information',
+                    description: 'For more information on our policies on cookies, privacy, and your choices, see our <a href="https://terms.uncharted.software/">Terms of Service</a>.',
+                }
+              ]
+            }
+          }
+        }
+      });
+    });
+    </script>
+    
+    <!-- Scripts -->
+    <script src="/js/lib/aos.js?v={{ now.Unix }}"></script>
+    <script src="/js/main.js?v={{ now.Unix }}"></script>
+    
+    <!-- Additional body content -->
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html> 

@@ -1,0 +1,39 @@
+{{ define "main" }}
+    <!-- Navigation -->
+    <header id="nav" class="section">
+        {{ partial "nav-menus.html" . }}
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="content-container">
+
+        <!-- Hero Section - Wordmark, tagline, and graphic (or a full-width photo when hero.backgroundImage is set) -->
+        <section id="home" class="section">
+            {{ if .Params.hero.backgroundImage }}
+            {{ partial "hero-photo.html" . }}
+            {{ else }}
+            {{ partial "hero.html" . }}
+            {{ end }}
+        </section>
+
+        <!-- About Section - Company overview (text in content/_index.md under "about:") -->
+        <section id="about" class="section">
+            {{ partial "about.html" . }}
+        </section>
+
+        <!-- How We Work Section - The loop (steps in content/approach/) -->
+        <section id="approach" class="section">
+            {{ partial "approach.html" . }}
+        </section>
+
+        <!-- Leadership Section - Bios (one file per person in content/leadership/) -->
+        <section id="leadership" class="section">
+            {{ partial "leadership.html" . }}
+        </section>
+
+        <!-- Contact Section - Footer (text in content/_index.md under "footer:") -->
+        <section id="contact" class="section">
+            {{ partial "footer.html" . }}
+        </section>
+    </main>
+{{ end }}

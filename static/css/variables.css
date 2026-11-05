@@ -1,0 +1,10 @@
+:root {
+    /* UFS brand colors: placeholder red/black until brand guidelines exist */
+    --brand-color: rgb(206, 32, 41);
+    --brand-dark: rgb(28, 28, 30);
+    --sign-in-color: var(--brand-color);
+    --innovation-h3-color: rgb(176, 24, 32);
+    --portfolio-h3-color: rgb(176, 24, 32);
+    --link-separator-color: rgb(176, 24, 32);
+    --nav-separator-color: rgb(206, 32, 41);
+}

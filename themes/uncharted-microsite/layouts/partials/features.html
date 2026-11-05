@@ -1,0 +1,21 @@
+<div class="features-grid">
+    {{ $features := .Site.GetPage "features" }}
+    {{ range $index, $feature := sort $features.Pages ".Params.order" }}
+    <div class="feature-row {{ if not (modBool $index 2) }}reverse{{ end }}">
+        {{ if modBool $index 2 }}
+        <div class="feature-image slide-in-left">
+            <img src="{{ $feature.Params.image.url }}" alt="{{ $feature.Params.image.alt }}">
+        </div>
+        {{ end }}
+        <div class="feature-text">
+            <h2>{{ $feature.Title }}</h2>
+            {{ $feature.Content }}
+        </div>
+        {{ if not (modBool $index 2) }}
+        <div class="feature-image slide-in-right">
+            <img src="{{ $feature.Params.image.url }}" alt="{{ $feature.Params.image.alt }}">
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+</div> 

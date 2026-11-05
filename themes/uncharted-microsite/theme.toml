@@ -1,0 +1,10 @@
+name = "Uncharted Microsite"
+description = "A modern, responsive theme for microsites"
+homepage = "https://uncharted.software"
+tags = ["documentation", "responsive", "modern"]
+features = ["responsive", "modern"]
+min_version = "0.145.0"
+
+[author]
+  name = "Uncharted Software"
+  homepage = "https://uncharted.software" 

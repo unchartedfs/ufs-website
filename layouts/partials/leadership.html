@@ -1,0 +1,23 @@
+{{ with .Params.leadership }}
+<div class="section-content">
+    <h2>{{ .title }}</h2>
+    <div class="portfolio-list">
+        {{ $people := sort (site.GetPage "leadership").Pages ".Params.order" }}
+        {{ range $index, $person := $people }}
+        <div class="portfolio person">
+            <div class="portfolio-thumbnail">
+                {{ with $person.Params.photo }}
+                <img src="{{ . }}" alt="{{ $person.Title }}">
+                {{ end }}
+            </div>
+            <div class="portfolio-content">
+                <h3>{{ $person.Title }}</h3>
+                {{ with $person.Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
+                {{ $person.Content }}
+            </div>
+        </div>
+        {{ if lt $index (sub (len $people) 1) }}<hr>{{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}

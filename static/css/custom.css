@@ -1,0 +1,333 @@
+/* Keep decorative graphics that bleed past the edge from adding a sideways scrollbar */
+html, body {
+    overflow-x: clip;
+}
+
+/* ===== UFS customizations (layered on top of the theme's main.css) ===== */
+
+.main-nav {
+    top: calc(230px + 330px);
+}
+
+/* Placeholder text wordmark (used until there is a logo image) */
+.wordmark-text {
+    width: 260px;
+    font-family: 'BatterseaSans', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--brand-color);
+    border-left: 6px solid var(--brand-color);
+    padding-left: 14px;
+}
+
+.tagline {
+    width: 520px;
+    white-space: pre-line;
+}
+
+.arrow-container a {
+    display: inline-block;
+}
+
+/* Photo hero variant (hero-photo.html): full-width background image behind the wordmark and tagline */
+.hero-photo {
+    position: relative;
+}
+
+/* Bleed the photo to the window edges, like the About and Leadership backgrounds */
+.hero-photo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: #8a9a9c;
+    background-image: var(--hero-background);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.hero-photo .tagline {
+    width: auto;
+    color: white;
+}
+
+/* Clear the arrow off the bottom edge of the photo */
+.hero-photo .arrow-container {
+    margin-bottom: 55px;
+}
+
+/* ----- About (uses the theme's description block) ----- */
+#about {
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: var(--brand-color);
+    z-index: -1;
+}
+
+#about .description-block {
+    margin: 100px 0;
+}
+
+#about .description-main,
+#about .description-col,
+#about .description-col h2 {
+    color: white;
+}
+
+#about .description-main {
+    width: 860px;
+}
+
+#about .description-row-columns {
+    gap: 80px;
+}
+
+#about .description-col {
+    width: 460px;
+    font-size: 19px;
+}
+
+#about .description-col h2 {
+    font-family: 'ProximaNova', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.26px;
+    margin-bottom: 12px;
+    padding-top: 14px;
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* ----- How We Work (uses the theme's innovation layout) ----- */
+#approach {
+    position: relative;
+}
+
+#approach h2 {
+    font-size: 38px;
+    text-transform: uppercase;
+    margin-top: 80px;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+.approach-intro {
+    font-size: 21px;
+    line-height: 1.4;
+    max-width: 860px;
+    margin: 24px 0 40px;
+}
+
+#approach .innovation-grid {
+    grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+    margin-bottom: 100px;
+}
+
+#approach .innovation-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#approach .text-block h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.step-number {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--brand-color);
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0;
+    position: relative;
+    top: -1px;
+}
+
+#approach .text-block p {
+    padding-left: 40px;
+}
+
+/* ----- Leadership (uses the theme's portfolio list styles) ----- */
+#leadership {
+    position: relative;
+}
+
+#leadership::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: rgb(242, 240, 241);
+    z-index: -1;
+}
+
+#leadership h2 {
+    font-size: 38px;
+    text-transform: uppercase;
+    margin-top: 80px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.person {
+    grid-template-columns: 220px 1fr;
+    gap: 50px;
+}
+
+.person .portfolio-thumbnail img {
+    border: none;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.person .portfolio-content {
+    gap: 10px;
+    max-width: 760px;
+}
+
+.person-role {
+    font-weight: 600;
+    color: #444;
+}
+
+/* ----- Footer ----- */
+.partner-block h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Bottom logo is 32px tall next to the 30px partner logo; align-self stops the flex column stretching it */
+.footer-bottom-left .company-logo {
+    align-self: flex-start;
+    height: 32px;
+}
+
+@media screen and (max-width: 768px) {
+    /* Keep the 32:30 height ratio to the partner logo, which the theme sizes at max(80px, 25vw) wide
+       (187x40 image): 32/30 x 40/187 of that width */
+    .footer-bottom-left .company-logo {
+        min-width: 0;
+        width: auto;
+        height: max(18.25px, 5.704vw);
+    }
+}
+
+.footer-wordmark {
+    font-family: 'BatterseaSans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-left: 4px solid var(--brand-color);
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Tablet layout */
+@media screen and (min-width: 769px) and (max-width: 1242px) {
+    .hero-photo::before,
+    #about::before,
+    #leadership::before {
+        width: 1242px;
+    }
+}
+
+/* Mobile layout */
+@media screen and (max-width: 768px) {
+    .wordmark-text {
+        width: auto;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    /* The theme stacks the hero and hides the arrow; keep the photo tall with the tagline at the bottom */
+    .hero-photo .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 60vh;
+        margin-bottom: 0;
+        padding: 30px 20px;
+    }
+
+    #about .description-block {
+        margin: 40px 0;
+    }
+
+    #about .description-main,
+    #about .description-col {
+        width: 100%;
+    }
+
+    #about .description-col {
+        font-size: 16px;
+    }
+
+    #approach h2,
+    #leadership h2 {
+        font-size: 26px;
+        line-height: normal;
+        margin-top: 30px;
+    }
+
+    .approach-intro {
+        font-size: 16px;
+    }
+
+    #approach .innovation-grid {
+        grid-template-columns: 1fr;
+        margin-bottom: 40px;
+    }
+
+    #approach .text-block p {
+        padding-left: 0;
+    }
+
+    .person {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .person .portfolio-thumbnail {
+        display: block !important;
+    }
+
+    .person .portfolio-thumbnail img {
+        width: 140px;
+    }
+
+    .person .portfolio-content {
+        max-width: 100%;
+    }
+}

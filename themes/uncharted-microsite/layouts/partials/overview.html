@@ -1,0 +1,16 @@
+<p class="intro">{{ .Params.description }}</p>
+
+{{ partial "features.html" . }}
+
+<div class="benefit-blocks">
+    {{ $benefits := .Site.GetPage "benefits" }}
+    {{ range sort $benefits.Pages ".Params.order" }}
+    <div class="benefit-block">
+        <div class="benefit-icon">
+            <img src="{{ .Params.icon }}" alt="">
+        </div>
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+    </div>
+    {{ end }}
+</div>

@@ -1,0 +1,26 @@
+<div id="{{ .Params.portfolio.anchor }}" class="section-content">
+    <h2>{{ .Params.portfolio.title }}</h2>
+    <div class="portfolio-list">
+        {{ $portfolio := .Site.GetPage "portfolio" }}
+        {{ $sortedPortfolio := sort $portfolio.Pages ".Params.order" }}
+        {{ range $index, $example := $sortedPortfolio }}
+        <div class="portfolio">
+            <div class="portfolio-thumbnail {{ if not .Params.image }}empty{{ end }}">
+                {{ if .Params.image }}
+                <img src="{{ .Params.image.url }}" alt="{{ .Params.image.alt }}">
+                {{ end }}
+            </div>
+            <div class="portfolio-content">
+                <h3>{{ .Title }}</h3>
+                {{ .Content }}
+                {{- if .Params.links -}}
+                <p>{{- $linksLength := len .Params.links -}}{{- range $i, $link := .Params.links -}}<a href="{{ $link.link }}" class="portfolio-link" target="_blank" rel="noopener noreferrer">{{ $link.link_text }}</a>{{- if lt $i (sub $linksLength 1) -}}<span class="link-separator"> | </span>{{- end -}}{{- end -}}</p>
+                {{- end -}}
+            </div>
+        </div>
+        {{ if lt $index (sub (len $sortedPortfolio) 1) }}
+        <hr>
+        {{ end }}
+        {{ end }}
+    </div>
+</div> 

@@ -1,0 +1,84 @@
+@font-face {
+	font-family: "ProximaNova";
+	src: url('../fonts/ProximaNova-Regular.otf');
+	src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+			url("../fonts/proximanova-regular.woff2") format("woff2"),
+			url('../fonts/proximanova-regular.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "ProximaNova";
+	src: url('../fonts/ProximaNova-RegularIt.otf');
+	src: url('../fonts/ProximaNova-RegularIt.eot?#iefix') format('embedded-opentype'),
+	 		url("../fonts/proximanova-regularit.woff2") format("woff2"),
+			url('../fonts/proximanova-regularit.woff') format('woff');
+	font-style: italic;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "ProximaNova";
+	src: url('../fonts/ProximaNova-Semibold.otf');
+	src: url('../fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+			url("../fonts/proximanova-semibold.woff2") format("woff2"),
+			url('../fonts/proximanova-semibold.woff') format('woff');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "ProximaNova";
+	src: url('../fonts/ProximaNova-Bold.otf');
+	src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+			url("../fonts/proximanova-bold.woff2") format("woff2"),
+			url('../fonts/proximanova-bold.woff') format('woff');
+	font-style: normal;
+	font-weight: bold;
+}
+
+@font-face {
+  font-family: "BatterseaSans";
+	src: url('../fonts/Battersea_Regular_SANS.otf');
+	src: url("../fonts/Battersea_Regular_SANSWEB.woff2") format("woff2"),
+  url('../fonts/Battersea_Regular_SANSWEB.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+  font-family: "BatterseaSans";
+  src: url('../fonts/Battersea_Medium_SANS.otf');
+  src:url("../fonts/Battersea_Medium_SANSWEB.woff2") format("woff2"),
+      url('../fonts/Battersea_Medium_SANSWEB.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+	font-family: "BatterseaSans";
+	src: url('../fonts/Battersea_SemiBold_SANS.otf');
+	src:url("../fonts/Battersea_SemiBold_SANSWEB.woff2") format("woff2"),
+			url('../fonts/Battersea_SemiBold_SANSWEB.woff') format('woff');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "BatterseaSans";
+	src: url('../fonts/Battersea_Bold_SANS.otf');
+	src: url("../fonts/Battersea_Bold_SANSWEB.woff2") format("woff2"),
+			url('../fonts/Battersea_Bold_SANSWEB.woff') format('woff');
+	font-style: normal;
+	font-weight: bold;
+}
+
+/* Apply fonts to elements */
+body {
+    font-family: 'ProximaNova', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'BatterseaSans', sans-serif;
+} 

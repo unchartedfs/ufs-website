@@ -1,0 +1,13 @@
+<div class="hero hero-photo" style="--hero-background: url('{{ .Params.hero.backgroundImage }}')">
+    <div class="hero-left">
+        {{ with .Params.hero.wordmarkImage }}
+        <img src="{{ . }}" alt="{{ site.Title }}" class="wordmark">
+        {{ else }}
+        <p class="wordmark wordmark-text">{{ .Params.hero.wordmarkText }}</p>
+        {{ end }}
+        <h1 class="tagline">{{ .Params.hero.tagline }}</h1>
+    </div>
+    <div class="arrow-container">
+        <a href="#about"><img src="{{ .Params.hero.arrow }}" alt="Scroll down" class="arrow"></a>
+    </div>
+</div>

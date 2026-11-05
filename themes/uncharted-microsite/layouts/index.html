@@ -1,0 +1,42 @@
+{{ define "main" }}
+    <!-- Navigation -->
+    {{ partial "nav-menus.html" . }}
+
+    <!-- Main Content Container -->
+    <main class="content-container">
+         <!-- Sign In bar - Displays an application sign-in button -->
+        <section id="sign-in" class="section">
+            {{ partial "sign-in.html" . }}
+        </section>       
+        
+        <!-- Hero Section - Main landing section with large logo and call-to-action tagline -->
+        <header id="home" class="section">
+            {{ partial "hero.html" . }}
+        </header>
+
+        <!-- Description Section - Product/service description -->
+        <section id="description" class="section">
+            {{ partial "description.html" . }}
+        </section>        
+
+        <!-- Overview Section - Product/service description with a list of features and screenshots -->
+        <section id="overview" class="section">
+            {{ partial "overview.html" . }}
+        </section>
+
+        <!-- Innovation Section - Showcases ongoing research or emerging use cases -->
+        <section id="innovation" class="section">
+            {{ partial "innovation.html" }}
+        </section>
+
+        <!-- Portfolio Section - Displays publications or example applications -->
+        <section id="portfolio" class="section">
+            {{ partial "portfolio.html" . }}
+        </section>
+
+        <!-- Contact Section - Contact information -->
+        <section id="contact" class="section">
+            {{ partial "footer.html" . }}
+        </section>
+    </main>
+{{ end }} 

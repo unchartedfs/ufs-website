@@ -1,0 +1,75 @@
+<div class="footer-content">
+    <h2>Contact Us to Learn More</h2>
+    
+    <div class="footer-grid">
+        <!-- Left Column -->
+        <div class="footer-left">
+            <div class="contact-info">
+                <div class="email-section">
+                    <img src="/images/footer/mail.png" alt="Email Icon" class="email-icon">
+                    <a href="mailto:{{ .Params.footer.email }}">{{ .Params.footer.email }}</a>
+                </div>
+                <h3>Uncharted Software</h3>
+                <p>Makers of {{.Site.Title}}{{with .Site.Params.productTrademark}}{{.}}{{end}}</p>
+                <p>{{ .Params.footer.about}}</p>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="footer-right">
+            <div class="address-block">
+                <h3>Head Office: Toronto, ON</h3>
+                <p>2 Berkeley St, Suite 600</p>
+                <p>Toronto, ON M5A 4J5</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom-grid">
+        <!-- Left Column -->
+        <div class="footer-bottom-left">
+            <img src="{{ .Params.footer.logo }}" alt="{{ .Site.Title }} logo" class="footer-logo">
+            <div class="footer-links">
+                <a href="https://terms.uncharted.software/#privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <span class="divider">|</span>
+                <a href="#" data-cc="c-settings">Cookie Preferences</a>
+                <span class="divider">|</span>
+                <a href="https://terms.uncharted.software/" target="_blank" rel="noopener noreferrer">Security</a>
+                <span class="divider">|</span>
+                <a href="https://uncharted.software" target="_blank" rel="noopener noreferrer">Uncharted</a>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="footer-bottom-right">
+            <div class="software-by">
+                <span>Software by</span>
+                <a href="https://uncharted.software" target="_blank" rel="noopener noreferrer"><img src="/images/footer/uncharted-white.png" alt="Uncharted logo" class="company-logo"></a>
+            </div>
+            <p class="copyright">Copyright © {{ now.Format "2006" }} Uncharted Software Inc. All Rights Reserved.
+                {{- $t := default .Site.Params.defaultUnchartedTrademarks .Site.Params.unchartedTrademarks -}}
+                {{- if $t -}}
+                    {{- if eq (len $t) 1 -}}
+                        {{ index $t 0 }}
+                    {{- else if eq (len $t) 2 -}} 
+                        {{ index $t 0 }} and {{ index $t 1 }}
+                    {{- else -}} 
+                        {{ $joined := delimit $t ", " -}}{{- $s := replaceRE ", ([^,]+)$" ", and $1" $joined -}}{{- printf " %s" $s -}}
+                    {{- end -}}
+                {{- end }} are trademarks or registered trademarks of Uncharted Software Inc. All other trademarks are the property of their respective owners.</p>
+        </div>
+    </div>
+
+    <!-- Mobile Footer Links -->
+    <div class="mobile-footer-links">
+        <a href="https://terms.uncharted.software/#privacy-policy">Privacy Policy</a>
+        <span class="divider">|</span>
+        <a href="#" data-cc="c-settings">Cookie Preferences</a>
+        <span class="divider">|</span>
+        <a href="https://terms.uncharted.software/">Security</a>
+        <span class="divider">|</span>
+        <a href="https://uncharted.software">Uncharted</a>
+    </div>
+</div> 

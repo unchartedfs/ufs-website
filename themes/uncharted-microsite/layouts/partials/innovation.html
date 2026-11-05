@@ -1,0 +1,21 @@
+<div id="{{ .Params.innovation.anchor }}" class="section-content">
+    <h2>{{ .Params.innovation.title }}</h2>
+    <div class="innovation-grid">
+        <div class="innovation-image">
+            <img src="{{ .Params.innovation.researchGraphic.url }}" alt="{{ .Params.innovation.researchGraphic.alt }}">
+        </div>
+        <div class="innovation-text-blocks">
+            {{ $innovation := .Site.GetPage "innovation" }}
+            {{ range sort $innovation.Pages ".Params.order" }}
+            <div class="text-block">
+                <h3>{{ .Title }}</h3>
+                {{ .Content }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    <div class="innovation-dot-pattern">
+        <img src="{{ .Params.innovation.dotPattern }}" alt="">
+        <img src="{{ .Params.innovation.dotPattern }}" alt="">
+    </div>
+</div> 

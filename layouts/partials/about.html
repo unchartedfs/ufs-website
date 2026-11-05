@@ -1,0 +1,15 @@
+{{ with .Params.about }}
+<div id="{{ .anchor }}-content" class="section-content description-block">
+    <div class="description-row description-row-main">
+        <p class="description-main">{{ .statement }}</p>
+    </div>
+    <div class="description-row description-row-columns">
+        {{ range .columns }}
+        <div class="description-col">
+            <h2>{{ .title }}</h2>
+            {{ .text | markdownify }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

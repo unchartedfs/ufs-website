@@ -1,0 +1,55 @@
+languageCode: en-us
+title: "Uncharted Frontier Services"
+theme: uncharted-microsite
+disableKinds:
+    - rss
+    - taxonomy
+    - term
+
+# Google Analytics is off until there's a real measurement ID.
+# To turn it on, uncomment these lines and replace the ID.
+# services:
+#   googleAnalytics:
+#     id: "G-XXXXXXXXXX"
+# privacy:
+#   googleAnalytics:
+#     respectDoNotTrack: true
+
+params:
+    domain: "unchartedfs.com"
+    author: "Uncharted Frontier Services"
+    # Used as the page's meta description (shown in search results)
+    overview: "Uncharted Frontier Services leads multidisciplinary R&D teams on high-risk, high-reward technology programs for the U.S. government, from problem discovery through last-mile transition."
+    unchartedTrademarks:
+      - "Uncharted®"
+    favicon: "/images/favicon.ico"
+    images:
+        - /images/ogimg.png
+
+menus:
+  main:
+    - name: About
+      pageRef: "#about"
+      weight: 1
+    - name: How We Work
+      pageRef: "#approach"
+      weight: 2
+    - name: Leadership
+      pageRef: "#leadership"
+      weight: 3
+    - name: Contact
+      pageRef: "#contact"
+      weight: 4
+  mobile:
+    - name: About
+      pageRef: "#about"
+      weight: 1
+    - name: How We Work
+      pageRef: "#approach"
+      weight: 2
+    - name: Leadership
+      pageRef: "#leadership"
+      weight: 3
+    - name: Contact
+      pageRef: "#contact"
+      weight: 4

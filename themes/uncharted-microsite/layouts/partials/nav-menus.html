@@ -1,0 +1,64 @@
+<div class="mobile-header">
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" style="display: block;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="close-icon" style="display: none;">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Navigation -->
+<nav class="main-nav">
+    <div class="nav-content">
+        <p class="menu-items">{{- with site.Menus.main -}}{{- $menuLength := len . -}}{{- range $index, $item := . -}}<a href="{{ if $item.PageRef }}{{ $item.PageRef }}{{ else }}{{ $item.URL }}{{ end }}"{{- if or (hasPrefix $item.PageRef "http") (hasPrefix $item.URL "http") -}} target="_blank" rel="noopener noreferrer"{{- end -}}>{{ $item.Name }}{{- if or (hasPrefix $item.PageRef "http") (hasPrefix $item.URL "http") -}}&nbsp;<img src="/images/external-link.svg" alt="" aria-hidden="true">{{- end -}}</a>{{- if lt $index (sub $menuLength 1) -}}<span class="nav-separator">|</span>{{- end -}}{{- end -}}{{- end -}}</p>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav">
+    <a href="#home">{{ .Site.Title }}</a>
+    {{ range site.Menus.mobile }}
+    <a href="{{ if .PageRef }}{{ .PageRef }}{{ else }}{{ .URL }}{{ end }}"{{- if or (hasPrefix .PageRef "http") (hasPrefix .URL "http") -}} target="_blank" rel="noopener noreferrer"{{- end -}}>{{ .Name }}{{- if or (hasPrefix .PageRef "http") (hasPrefix .URL "http") -}}&nbsp;<img src="/images/external-link.svg" alt="" aria-hidden="true">{{- end -}}</a>
+    {{ end }}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const menuItems = mobileNav.querySelectorAll('a');
+
+    function closeMenu() {
+        mobileNav.style.display = 'none';
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+    }
+
+    hamburgerMenu.addEventListener('click', function() {
+        const isExpanded = mobileNav.style.display === 'block';
+        
+        if (isExpanded) {
+            closeMenu();
+        } else {
+            mobileNav.style.display = 'block';
+            hamburgerIcon.style.display = 'none';
+            closeIcon.style.display = 'block';
+        }
+    });
+
+    // Add click handlers to all menu items
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Don't prevent default behavior
+            closeMenu();
+        });
+    });
+});
+</script> 

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 560" width="640" height="560" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ce2029"/></marker></defs>
+<path d="M410.7 113.1 A190 190 0 0 1 486.9 189.3" fill="none" stroke="#ce2029" stroke-width="3" marker-end="url(#ah)"/>
+<path d="M486.9 370.7 A190 190 0 0 1 410.7 446.9" fill="none" stroke="#ce2029" stroke-width="3" marker-end="url(#ah)"/>
+<path d="M229.3 446.9 A190 190 0 0 1 153.1 370.7" fill="none" stroke="#ce2029" stroke-width="3" marker-end="url(#ah)"/>
+<path d="M153.1 189.3 A190 190 0 0 1 229.3 113.1" fill="none" stroke="#ce2029" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#ah)"/>
+<text x="320" y="266" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1.5" fill="#1c1c1e">TRANSITION PARTNERS</text>
+<text x="320" y="286" text-anchor="middle" font-size="13" fill="#555">in the room from</text>
+<text x="320" y="304" text-anchor="middle" font-size="13" fill="#555">discovery through transition</text>
+<circle cx="320.0" cy="90.0" r="78" fill="#fff" stroke="#1c1c1e" stroke-width="2.5"/>
+<text x="320.0" y="68.0" text-anchor="middle" font-size="14" font-weight="700" fill="#333">1</text>
+<text x="320.0" y="92.0" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="1" fill="#ce2029">DISCOVER</text>
+<text x="320.0" y="112.0" text-anchor="middle" font-size="13" fill="#333">the problem</text>
+<circle cx="510.0" cy="280.0" r="78" fill="#ce2029" stroke="#ce2029" stroke-width="2.5"/>
+<text x="510.0" y="258.0" text-anchor="middle" font-size="14" font-weight="700" fill="#fde3e4">2</text>
+<text x="510.0" y="282.0" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="1" fill="#fff">PERFORM</text>
+<text x="510.0" y="302.0" text-anchor="middle" font-size="13" fill="#fde3e4">the research</text>
+<circle cx="320.0" cy="470.0" r="78" fill="#fff" stroke="#1c1c1e" stroke-width="2.5"/>
+<text x="320.0" y="448.0" text-anchor="middle" font-size="14" font-weight="700" fill="#333">3</text>
+<text x="320.0" y="472.0" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="1" fill="#ce2029">DELIVER</text>
+<text x="320.0" y="492.0" text-anchor="middle" font-size="13" fill="#333">the last mile</text>
+<circle cx="130.0" cy="280.0" r="78" fill="#1c1c1e" stroke="#1c1c1e" stroke-width="2.5"/>
+<text x="130.0" y="258.0" text-anchor="middle" font-size="14" font-weight="700" fill="#f3a3a6">4</text>
+<text x="130.0" y="282.0" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="1" fill="#fff">FIND</text>
+<text x="130.0" y="302.0" text-anchor="middle" font-size="13" fill="#f3a3a6">the next frontier</text>
+</svg>

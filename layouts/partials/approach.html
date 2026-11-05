@@ -1,0 +1,26 @@
+{{ with .Params.approach }}
+<div class="section-content">
+    <h2>{{ .title }}</h2>
+    {{ with .intro }}<p class="approach-intro">{{ . }}</p>{{ end }}
+    <div class="innovation-grid">
+        <div class="innovation-image">
+            <img src="{{ .graphic.url }}" alt="{{ .graphic.alt }}">
+        </div>
+        <div class="innovation-text-blocks">
+            {{ $steps := site.GetPage "approach" }}
+            {{ range $i, $step := sort $steps.Pages ".Params.order" }}
+            <div class="text-block">
+                <h3><span class="step-number">{{ add $i 1 }}</span>{{ $step.Title }}</h3>
+                {{ $step.Content }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ with .dotPattern }}
+    <div class="innovation-dot-pattern">
+        <img src="{{ . }}" alt="">
+        <img src="{{ . }}" alt="">
+    </div>
+    {{ end }}
+</div>
+{{ end }}
